@@ -36,7 +36,7 @@ def get_prediction(image_bytes):
     prob = float()
     tensor = transform_image(image_bytes=image_bytes)
     outputs = model.forward(tensor)
-    softmax = F.softmax(outputs)
+    softmax = F.softmax(outputs).detach().cpu()
     _, predicted = outputs.max(1)
     
     if predicted.numpy()[0] == 1:
