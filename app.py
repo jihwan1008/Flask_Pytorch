@@ -6,7 +6,7 @@ import torchvision.transforms as transforms
 from PIL import Image
 import torch.nn as nn
 import torch
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template, request
 import os
 
 app = Flask(__name__)
