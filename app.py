@@ -52,6 +52,10 @@ def get_prediction(image_bytes):
 def favicon():     
     return send_from_directory(os.path.join(app.root_path, 'static'),                                'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
+@app.route('/', methods=['GET'])
+def root:
+    return jsonify({'msg' : 'Try POSTing to the /predict endpoint with RGB image attachment'})
+
 @app.route('/predict', methods=['POST'])
 def predict():
     if request.method == 'POST':
