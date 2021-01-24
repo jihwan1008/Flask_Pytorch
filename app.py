@@ -44,7 +44,7 @@ def get_prediction(image_bytes):
         prob = softmax.numpy()[0][1]
     else:
         idx = 'Normal'
-        prob = softmax.numpy()[0][1]
+        prob = softmax.numpy()[0][0]
 
     return idx, prob
 
